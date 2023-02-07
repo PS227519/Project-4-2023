@@ -1,0 +1,25 @@
+﻿<Window x:Class="Project_4.Create"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_4"
+        mc:Ignorable="d"
+        Title="Create" Height="400" Width="320" WindowStartupLocation="CenterScreen" Icon="C:\DATA\Summa ICT\Leerjaar 2\Project 4\DD\Project 4\Project 4\Img\pizzzzaaaaaaa.jfif" >
+    <Grid>
+        <StackPanel Margin="0,0,0,0" Height="380px" Width="220px" >
+            <TextBlock FontWeight="Bold" FontSize="20px" TextAlignment="Center">Create Pizza</TextBlock>
+            <TextBlock FontWeight="Bold" FontSize="15px" TextAlignment="Center" Margin="0,50,0,0" >Name:</TextBlock>
+            <TextBox Width="120px" x:Name="TBNaam" BorderThickness="2px" ></TextBox>
+            <TextBlock FontWeight="Bold" FontSize="15px" TextAlignment="Center" Margin="0,20,0,0" >Description:</TextBlock>
+            <TextBox Width="120px" x:Name="TBDescription" BorderThickness="2px" ></TextBox>
+            <TextBlock FontWeight="Bold" FontSize="15px" TextAlignment="Center" Margin="0,20,0,0" >Price:</TextBlock>
+            <TextBox Width="120px" x:Name="TBPrice" BorderThickness="2px" ></TextBox>
+            <StackPanel Orientation="Horizontal">
+                <Button Margin="50,20,0,0" Background="Gray" FontWeight="Bold" Click="Back_Click" >Back</Button>
+                <Button Margin="50,20,0,0" Background="Gray" FontWeight="Bold" Click="BTCreate_Click" >Create</Button>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,53 @@
+﻿<Window x:Class="Project_4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_4"
+        mc:Ignorable="d"
+        Title="Menu" Height="450" Width="800" Icon="C:\DATA\Summa ICT\Leerjaar 2\Project 4\DD\Project 4\Project 4\Img\pizzzzaaaaaaa.jfif" WindowStartupLocation="CenterScreen" >
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,20,0,0"  Height="40px" Width="160px" >
+            <Button Background="Gray" FontWeight="Bold" Width="80px" x:Name="HomeBT" >Home</Button>
+            <Button Background="Gray" FontWeight="Bold" Width="80px" Click="LoginBT_Click" x:Name="LoginBT" >Login</Button>
+
+        </StackPanel>
+        <Grid VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30,87,0,0"  Width="300px" Height="300px" >
+            <ListView Background="gray" 
+                      ItemsSource="{Binding Products}" 
+                      SelectedItem="{Binding SelectedProduct}"  
+                      MouseDoubleClick="LV_MouseDoubleClick">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Background="Black" Margin="2, 2, 2, 4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Name}" Foreground="White"/>
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Description}"  Foreground="White"/>
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="{Binding PriceInEuro}"  Foreground="White"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        <Grid Width="200px" Height="400px" Margin="0,0,20,45" HorizontalAlignment="Right" VerticalAlignment="Center" >
+            <ListBox MouseDoubleClick="LBBestelling_MouseDoubleClick" Height="250px" x:Name="LBBestelling">
+            </ListBox>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,50" Height="20px"  >
+                <TextBlock FontWeight="Bold" >Totaalprijs: €</TextBlock>
+                <TextBlock FontWeight="Bold"  x:Name="TBTotaalprijs" ></TextBlock>
+            </StackPanel>
+            
+            <Button Click="OrderBT_Click" Width="200px" Height="30px" Margin="0,0,0,15" VerticalAlignment="Bottom" FontWeight="Bold" >Order</Button>
+        </Grid>
+    </Grid>
+</Window>
